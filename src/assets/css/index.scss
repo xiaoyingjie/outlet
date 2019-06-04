@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* animation */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.el-menu--horizontal .el-submenu .el-submenu__title {
+  height: 58px;
+  line-height: 58px;
+  text-align: center;
+}
+.el-menu--horizontal .el-menu-item {
+  height: 58px;
+  line-height: 58px;
+}
+
+.el-menu--horizontal {
+  border-bottom: none!important;
+}
+
+.el-table .warning-row .cell{
+  color: #000;
+}
+.el-table .red-row .cell{
+  /*background: salmon;*/
+  color: salmon;
+}
+.el-table .green-row .cell{
+  color: #00B83F;
+}
+
+.el-badge__content.is-fixed.is-dot {
+  top: 15px;
+}

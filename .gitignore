@@ -1,0 +1,19 @@
+.DS_Store
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+selenium-debug.log
+/dist
+/src/views/map/check2.vue
+/src/views/map/main.vue
+/src/views/map/map3.vue
+/src/views/map/suspectProblem3.vue
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

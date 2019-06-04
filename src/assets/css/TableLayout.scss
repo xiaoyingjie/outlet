@@ -1,0 +1,131 @@
+$fontFamilys: "Microsoft YaHei";
+$font: "SimSun";
+.bb-layout {
+  height: 100%;
+  font-family: $fontFamilys;
+  font-size: 20px;
+  color: #040e31;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  .seach-form {
+    position: relative;
+    height: 49px;
+    line-height: 49px;
+    box-shadow: 0px 3px 5px rgba(15, 21, 53, 0.22);
+    .dbase {
+      display: inline-block;
+      cursor: pointer;
+      &:nth-child(1) {
+        margin-left: 12px;
+      }
+      padding: 0 5px;
+      height: 50px;
+      border-bottom: 1px solid transparent;
+      .dboxIcon {
+        margin: 0 3px 0 8px;
+        color: #7FAEEC;
+      }
+      .dboxIconText {
+        font-family: $font;
+        font-size: 12px;
+        color: #040e31;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .team-search{
+      height: 26px;
+      width: 258px;
+      border-radius: 15px;
+      border: 1px solid #91d3ff;
+      position: relative;
+      left: 0;
+      top: 12px;
+      input{
+        position: absolute;
+        top: 7px;
+        padding-left: 16px;
+        font-size: 12px;
+        font-family: $font;
+        border-radius: 15px;
+        width: 210px;
+        color: #000;
+        ::-webkit-input-placeholder {
+          font-size: 12px;
+          color: #aaa;
+          font-family: $font;
+        }
+        :-moz-placeholder {
+          font-size: 12px;
+          color: #aaa;
+          font-family: $font;
+        }
+        ::-moz-placeholder {
+          font-size: 12px;
+          color: #aaa;
+          font-family: $font;
+        }
+        :-ms-input-placeholder {
+          font-size: 12px;
+          color: #aaa;
+          font-family: $font;
+        }
+      }
+      span{
+        position: absolute;
+        right: 12px;
+        line-height: 26px;
+        color: #a7a7a7;
+        cursor: pointer;
+        &:hover{
+          color: #0099ff;
+        }
+      }
+    }
+    .button-caozuo{
+      margin-right: 12px;
+      cursor: pointer;
+      .upload-div{
+        display: inline-block;
+        .el-button{
+          background-color: #fff!important;
+          border: none!important;
+          font-size: 12px;
+          color: #000;
+          font-family: $font;
+          padding: 0!important;
+          i{padding-right: 5px}
+        }
+      }
+      .navTit{
+        font-size: 12px;
+        color: #000;
+        font-family: $font;
+      }
+      .navTu{
+        font-size: 14px;
+        color: #2f81eb;
+        &:hover{
+          color: #82b3f3;
+        }
+      }
+    }
+  }
+  .bb-data-layout{
+    position: relative;
+    height: calc(100% - 89px);
+    padding: 20px;
+  }
+  .table-seach-form-div{
+    position: absolute;background-color: #e4ebf3;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 10001;
+    .seach-form{
+      height: inherit!important;
+    }
+  }
+}

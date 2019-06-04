@@ -1,0 +1,249 @@
+$fontFamilys: "Microsoft YaHei";
+$font: "SimSun";
+.detail{
+  .detail-form .el-form-item {
+    width: 400px;
+    display: inline-block;
+    height: 30px!important;
+    line-height: 30 !important;
+    float: left;
+    .el-form-item__label{
+      line-height: 30px!important;
+      height: 30px!important;
+      font-size: 12px!important;
+    }
+    .el-form-item__content {
+      height: 30px!important;
+      line-height: 30px!important;
+      font-size: 12px!important;
+      .el-radio-group{
+        margin-left: 10px;
+      }
+      .el-input__prefix .el-input__icon, .el-input__suffix .el-input__icon{
+        line-height: 30px!important;
+      }
+      .el-cascader{
+        line-height: 30px!important;
+        .el-input__icon{
+          line-height: 30px!important;
+        }
+      }
+      .el-input {
+        width: 238px;
+        border-radius: 4px;
+        margin-left: 8px;
+      }
+      .el-radio__label{
+        font-size: 12px!important;
+      }
+      .el-cascader__label{
+        font-size: 12px!important;
+      }
+      .errorTitle{
+        position: absolute;
+        left: 7px;
+        top: 30px;
+        font-size: 12px;
+        color: #ff0000;
+      }
+      .el-form-item__error {
+        left: 10px !important;
+        font-family: $font;
+        font-size: 12px;
+        color: #e34c1a;
+      }
+      .el-input__inner {
+        height: 30px!important;
+        border: 1px solid #d7d7d7 !important;
+        font-size: 12px;
+        font-family: $font;
+        color: #323232;
+        &:focus {
+          border-color: #2f81eb !important;
+        }
+      }
+      .el-input__icon{
+        font-size: 12px!important;
+      }
+      ::-webkit-input-placeholder { /* WebKit browsers */
+        font-size: 12px !important;
+        font-family: $font !important;
+        color: #323232 !important;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        font-size: 12px !important;
+        font-family: $font !important;
+        color: #323232 !important;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        font-size: 12px !important;
+        font-family: $font !important;
+        color: #323232 !important;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10+ */
+        font-size: 12px !important;
+        font-family: $font !important;
+        color: #323232 !important;
+      }
+    }
+  }
+  .detail-form .textarea {
+    height: auto!important;
+    .el-form-item__content{
+      height: auto!important;
+    }
+  }
+}
+
+.seach-form .el-form{
+  .el-form-item__label {
+    margin-left: 15px!important;
+    font-size: 12px!important;
+    font-family: $font!important;
+    color: #646464!important;
+    padding: 0!important;
+  }
+  .el-input {
+    width: 128px !important;
+    margin-left: 5px!important;
+    .el-input__icon {
+      line-height: 26px!important;
+      height: 24px !important;
+      font-size: 12px!important;
+    }
+    .el-icon-caret-top {
+      top: 26px!important;
+    }
+    .el-input__inner {
+      height: 26px !important;
+      font-size: 12px!important;
+      font-family: $font!important;
+      border: 1px solid #dcdcdc !important;
+      color: #000!important;
+    }
+    ::-webkit-input-placeholder { /* WebKit browsers */
+      font-size: 12px!important;
+      color: #aaa!important;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      font-size: 12px!important;
+      color: #aaa!important;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      font-size: 12px!important;
+      color: #aaa!important;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+      font-size: 12px!important;
+      color: #aaa!important;
+    }
+  }
+  .el-cascader{
+  }
+  .el-form-item__content {
+    line-height: 50px!important;
+    .el-cascader__label{
+      font-size: 12px!important;
+    }
+  }
+  .el-form-item {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .search_btn {
+    padding: 0 8px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: $font;
+    cursor: pointer;
+    color: #323232;
+    border-color: #dbdee0;
+    background: #f0f0f0;
+    display: inline-block;
+    &:hover {
+      color: #fff;
+      background: #006bb2;
+    }
+  }
+}
+.map-seach-form .el-form{
+  .el-form-item__label {
+    display: none;
+    margin-left: 15px!important;
+    font-size: 12px!important;
+    font-family: $font!important;
+    color: #646464!important;
+    padding: 0!important;
+  }
+  .el-input {
+    width: 160px !important;
+    margin-left: 5px!important;
+    .el-input__icon {
+      font-size: 12px!important;
+    }
+    .el-icon-caret-top {
+      top: 26px!important;
+    }
+    .el-input__inner {
+      height: 26px !important;
+      font-size: 12px!important;
+      font-family: $font!important;
+      border: 1px solid #dcdcdc !important;
+      color: #000!important;
+    }
+    ::-webkit-input-placeholder { /* WebKit browsers */
+      font-size: 12px!important;
+      color: #aaa!important;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      font-size: 12px!important;
+      color: #aaa!important;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      font-size: 12px!important;
+      color: #aaa!important;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+      font-size: 12px!important;
+      color: #aaa!important;
+    }
+  }
+  .el-form-item__content {
+    line-height: 50px!important;
+    .el-cascader__label{
+      font-size: 12px!important;
+    }
+  }
+  .el-form-item {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .search_btn {
+    padding: 0 8px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: $font;
+    cursor: pointer;
+    color: #323232;
+    border-color: #dbdee0;
+    background: #f0f0f0;
+    display: inline-block;
+    &:hover {
+      color: #fff;
+      background: #006bb2;
+    }
+  }
+}
+.el-tooltip__popper.is-dark{
+  max-width: 90%!important;
+}
+.el-upload-list--picture-card .el-upload-list__item, .el-upload--picture-card{
+  width: 90px!important;
+  height: 90px!important;
+  line-height: 88px!important;
+}
+

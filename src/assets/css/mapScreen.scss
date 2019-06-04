@@ -1,0 +1,249 @@
+/* 针对地图上的条件筛选  tou  */
+.map-screen {
+  position: fixed;
+  height: calc(100% - 58px);
+  width: 380px;
+  top: 58px;
+  background-color: #fbfeff;
+  box-shadow: 2px 2px 4px rgba(15, 21, 53, 0.22);
+  .map-screen-header {
+    z-index: 200;
+    position: relative;
+    height: 50px;
+    padding: 0 15px;
+    border-bottom: 1px solid #efefef;
+    .map-screen-header-title{
+      position: absolute;height: 49px;line-height: 49px; border-bottom: 1px solid #2f81eb;text-align: center;padding: 0 10px;
+      max-width: calc(100% - 70px);
+      span{
+        display: inline-block;
+        max-width: calc(100%);
+        font-size: 13px;height: 49px;line-height: 49px;
+        text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+        i{
+          margin-right: 8px;color: rgba(47, 129,235,.8);
+        }
+      }
+    }
+  }
+  .go-back {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 34px;
+    background: #2f81eb;
+    cursor: pointer;
+    text-align: center;
+    span {
+      line-height: 45px;
+      font-size: 16px;
+      color: #fff;
+    }
+    &:hover {
+      background: #225eb3;
+      color: #b3b6c1;
+    }
+  }
+  .map-screen-tab{
+    position: relative;
+    background-color: #fbfeff;
+    z-index: 30;
+  }
+  .map-screen-seach{
+    position: relative;
+    font-family: 宋体;
+    height: calc(100% - 168px);
+  }
+  .map-screen-footer{
+    border-top: 1px solid #efefef;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    &:hover span{color: #000000}
+    span{
+      font-family: SimSun;
+      font-size: 11px;
+      color: #333333;
+    }
+  }
+
+  /* 各个模块---公用的css */
+  .main-layout{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .map-screen-seach-form{
+      position: absolute;
+      z-index: 1;
+      top:0px;
+      overflow-y: auto;
+      width: 100%;
+      background-color: #fbfeff;
+      .map-screen-seach-form-iscollapse{
+        position: relative;height: 40px;line-height: 40px;text-align: center;border-bottom: 1px solid #efefef;
+        span{
+          cursor: pointer;
+          color: #757987;font-size: 12px;
+          i{color: #757987;font-size: 12px;margin-left: 8px}
+          &:hover{
+            color: #2F81EB;
+            i{color: #2F81EB;}
+          }
+        }
+      }
+    }
+    .map-screen-seach-result{
+      padding-top: 40px;
+      height: calc(100% - 80px);
+      .result-list{
+        padding: 10px 12px 0;
+        li{
+          list-style: none;
+          height: 96px;
+          cursor: pointer;
+          &:hover{
+            background-color: #f0f4f8;
+          }
+          .result-list-num{
+            display: inline-block;width: 40px;height: 100%;
+            left: 0;
+            position: absolute;
+            span{
+              font-family: SimHei;
+            }
+          }
+          .result-list-desc{
+            display: inline-block;
+            width: calc(100% - 40px);
+            height: calc(100% - 20px);
+            right: 0;
+            top: 20px;
+            position: absolute;
+            div{
+              text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+              margin-bottom: 10px;
+              font-size: 12px;
+              font-family: SimHei;
+            }
+          }
+        }
+      }
+    }
+    .map-screen-seach-page{
+      border-top: 1px solid #efefef;
+    }
+  }
+}
+
+.vaga-baseinfo-main .main-layout{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .map-screen-seach-form{
+    position: absolute;
+    z-index: 1;
+    top:0px;
+    overflow-y: auto;
+    width: 100%;
+    background-color: #fbfeff;
+    .map-screen-seach-form-iscollapse{
+      position: relative;height: 40px;line-height: 40px;text-align: center;border-bottom: 1px solid #efefef;
+      span{
+        cursor: pointer;
+        color: #757987;font-size: 12px;
+        i{color: #757987;font-size: 12px;margin-left: 8px}
+        &:hover{
+          color: #2F81EB;
+          i{color: #2F81EB;}
+        }
+      }
+    }
+  }
+  .map-screen-seach-result{
+    padding-top: 40px;
+    height: calc(100% - 80px);
+    .result-list{
+      padding: 10px 12px 0;
+      li{
+        list-style: none;
+        height: 96px;
+        cursor: pointer;
+        &:hover{
+          background-color: #f0f4f8;
+        }
+        .result-list-num{
+          display: inline-block;width: 40px;height: 100%;
+          left: 0;
+          position: absolute;
+          span{
+            font-family: SimHei;
+          }
+        }
+        .result-list-desc{
+          display: inline-block;
+          width: calc(100% - 40px);
+          height: calc(100% - 20px);
+          right: 0;
+          top: 20px;
+          position: absolute;
+          div{
+            text-overflow:ellipsis;white-space:nowrap;overflow:hidden;
+            margin-bottom: 10px;
+            font-size: 12px;
+            font-family: SimHei;
+          }
+        }
+      }
+    }
+  }
+  .map-screen-seach-page{
+    border-top: 1px solid #efefef;
+  }
+}
+.info-layout{
+  position: relative;
+  padding: 0 20px;
+  height: 100%;
+  .info-item{
+    position: relative;
+    font-size: 12px;
+    line-height: 39px;
+    border-bottom: 1px solid #efefef;
+    label{
+      float: left;
+      color: #636363;
+      i{font-size: 14px; padding: 0 5px;color: #50b432;}
+      span{
+        vertical-align: top;
+      }
+    }
+    .info-item-desc{
+      float: left;
+    }
+  }
+  .info-item:last-child{
+    border-bottom: none;
+  }
+  .info-item.info-last .beizhu{
+    height: 20px;width: 20px;line-height:20px;
+    margin-top: 8px;
+    display: inline-block;position: relative;border-radius: 10px;background-color: #6fadfe;padding: 0px;
+    span{
+      color: #fff;font-size: 12px;position: absolute;font-family: SimSun;
+      padding-left: 4px;
+      font-style: normal;
+    }
+  }
+  .info-item-img{
+    position: relative;
+    font-size: 12px;
+    line-height: 39px;
+    clear: both;
+    overflow: hidden;
+    ul {
+      float: left;
+    }
+  }
+}

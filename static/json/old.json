@@ -1,0 +1,419 @@
+{
+  "oldData": [
+  ],
+  "newData": {
+    "per": [
+      {
+        "code": "03",
+        "enable": 0,
+        "id": "03",
+        "name": "问题登记",
+        "parent": "00",
+        "isEdit": false,
+        "children": [
+          {
+            "code": "0301",
+            "enable": 0,
+            "id": "0301",
+            "name": "添加",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0302",
+            "enable": 0,
+            "id": "0302",
+            "name": "编辑",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0303",
+            "enable": 0,
+            "id": "0303",
+            "name": "删除",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0304",
+            "enable": 0,
+            "id": "0304",
+            "name": "查询",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0305",
+            "enable": 0,
+            "id": "0305",
+            "name": "统计",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0306",
+            "enable": 0,
+            "id": "0306",
+            "name": "导出",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "04",
+        "enable": 0,
+        "id": "04",
+        "name": "基本信息",
+        "parent": "00",
+        "isEdit": false,
+        "children": [
+          {
+            "code": "0401",
+            "enable": 0,
+            "id": "0401",
+            "name": "添加",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0402",
+            "enable": 0,
+            "id": "0402",
+            "name": "编辑",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0403",
+            "enable": 0,
+            "id": "0403",
+            "name": "删除",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0404",
+            "enable": 0,
+            "id": "0404",
+            "name": "查询",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0405",
+            "enable": 0,
+            "id": "0405",
+            "name": "统计",
+            "parent": "03",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0406",
+            "enable": 0,
+            "id": "0406",
+            "name": "报表导出",
+            "parent": "0301",
+            "isEdit": false,
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "05",
+        "enable": 0,
+        "id": "05",
+        "name": "问题核实确认",
+        "parent": "00",
+        "isEdit": false,
+        "children": [
+          {
+            "code": "0501",
+            "enable": 0,
+            "id": "0501",
+            "name": "确认",
+            "parent": "05",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0502",
+            "enable": 0,
+            "id": "0502",
+            "name": "打回",
+            "parent": "05",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0503",
+            "enable": 0,
+            "id": "0503",
+            "name": "编辑",
+            "parent": "05",
+            "isEdit": false,
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "06",
+        "enable": 0,
+        "id": "06",
+        "name": "督察任务",
+        "parent": "00",
+        "isEdit": false,
+        "children": [
+          {
+            "code": "0601",
+            "enable": 0,
+            "id": "0601",
+            "name": "督察任务创建",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0602",
+            "enable": 0,
+            "id": "0602",
+            "name": "调度组员任务分配",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0603",
+            "enable": 0,
+            "id": "0603",
+            "name": "导入督察组",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0604",
+            "enable": 0,
+            "id": "0604",
+            "name": "导入督察人员",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0605",
+            "enable": 0,
+            "id": "0605",
+            "name": "任务分配",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0606",
+            "enable": 0,
+            "id": "0606",
+            "name": "开启督察任务",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0607",
+            "enable": 0,
+            "id": "0607",
+            "name": "督察任务进度监督",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0608",
+            "enable": 0,
+            "id": "0608",
+            "name": "选择问题通报",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0609",
+            "enable": 0,
+            "id": "0609",
+            "name": "督察情况统计",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0610",
+            "enable": 0,
+            "id": "0610",
+            "name": "督察简报管理",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0611",
+            "enable": 0,
+            "id": "0611",
+            "name": "督办监控",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0612",
+            "enable": 0,
+            "id": "0612",
+            "name": "一图一故事管理",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0613",
+            "enable": 0,
+            "id": "0613",
+            "name": "督察组长收结管理",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0614",
+            "enable": 0,
+            "id": "0614",
+            "name": "结束督察任务",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0615",
+            "enable": 0,
+            "id": "0615",
+            "name": "督察整治说明",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0616",
+            "enable": 0,
+            "id": "0616",
+            "name": "督察简报",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0617",
+            "enable": 0,
+            "id": "0617",
+            "name": "登记水源地问题",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0618",
+            "enable": 0,
+            "id": "0618",
+            "name": "上传督办单",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0619",
+            "enable": 0,
+            "id": "0619",
+            "name": "一图一故事",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0620",
+            "enable": 0,
+            "id": "0620",
+            "name": "我的督察",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0621",
+            "enable": 0,
+            "id": "0621",
+            "name": "督察核实",
+            "parent": "06",
+            "isEdit": false,
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "07",
+        "enable": 0,
+        "id": "07",
+        "name": "整体监控",
+        "parent": "00",
+        "isEdit": false,
+        "children": [
+          {
+            "code": "0701",
+            "enable": 0,
+            "id": "0701",
+            "name": "水源地基本信息情况统计",
+            "parent": "07",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0702",
+            "enable": 0,
+            "id": "0702",
+            "name": "水源地保护区情况统计",
+            "parent": "07",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0703",
+            "enable": 0,
+            "id": "0703",
+            "name": "水源地问题及整改情况统计",
+            "parent": "07",
+            "isEdit": false,
+            "children": []
+          },
+          {
+            "code": "0701",
+            "enable": 0,
+            "id": "0701",
+            "name": "水源地问题督察情况统计",
+            "parent": "07",
+            "isEdit": false,
+            "children": []
+          }
+        ]
+      }
+    ],
+    "id": "2"
+  }
+}

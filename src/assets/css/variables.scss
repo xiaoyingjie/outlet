@@ -1,0 +1,81 @@
+$content-motherboard                :#f5f8fa;     // 内容主板
+$navigation-background              :#1a202a;     // 导航背景
+$navigation-secondary-background    :#131922;     // 导航二级背景
+$navigation-selection               :#0a121a;     // 导航选中
+
+//$navigation-text                    :#737f8a;     // 导航文字
+//$main-text                          :#ffffff;     // 标题主要文字
+//$regular-text                       :#d9dcdf;     // 常规文字
+//$secondary-text                     :#a6adb4;     // 次要文字
+//$invalid-text                       :#737f8a;     // 失效文字
+//$scroll-bar-input-box-icon          :#40505f;     // 滚动条/输入框图标
+//$border-line-input-box-deleted      :#40505f;     // 边框线/输入框删除
+//$dividing-line                      :#263849;     // 分割线
+//$disable-background                 :#172a3c;     // 背景色/禁用背景色
+//$table-header                       :#0d2134;     // 表格头部
+
+$navigation-text                    :#a7a9ab;     // 导航文字
+$main-text                          :#22272e;     // 标题主要文字
+$regular-text                       :#4e5258;     // 常规文字
+$secondary-text                     :#7a7d82;     // 次要文字
+$invalid-text                       :#a7a9ab;     // 失效文字
+$scroll-bar-input-box-icon          :#c8c9cb;     // 滚动条/输入框图标
+$border-line-input-box-deleted      :#dadbdc;     // 边框线/输入框删除
+$dividing-line                      :#f2f2f3;     // 分割线
+$disable-background                 :#f4f4f4;     // 背景色/禁用背景色
+$table-header                       :#f8f8f8;     // 表格头部
+
+
+$dominant-color                     :#1c8ffa;     // 主色
+$click-color                        :#107de2;     // 点击色
+$hovering-color                     :#49a7fe;     // 悬停色
+$disable-color                      :#b0d8fd;     // 禁用色
+
+$dominant-color-success             :#3bc568;     // 主色-成功
+$click-color-success                :#20b250;     // 点击色-成功
+$hovering-color-success             :#4ece78;     // 悬停色-成功
+$disable-color-success              :#bbebca;     // 禁用色-成功
+
+$dominant-color-info                :#909399;     // 主色-提示
+$click-color-info                   :#909399;     // 点击色-提示
+$hovering-color-info                :#909399;     // 悬停色-提示
+$disable-color-info                 :#909399;     // 禁用色-提示
+
+$dominant-color-warning             :#f19d18;     // 主色-警告
+$click-color-warning                :#f0aa3c;     // 点击色-警告
+$hovering-color-warning             :#e19319;     // 悬停色-警告
+$disable-color-warning              :#faddae;     // 禁用色-警告
+
+$dominant-color-danger              :#f25555;     // 主色-错误
+$click-color-danger                 :#ec6d6d;     // 点击色-错误
+$hovering-color-danger              :#df4545;     // 悬停色-错误
+$disable-color-danger               :#fac4c4;     // 禁用色-错误
+
+
+$heading-number                     :18px;        // 主标题字号
+$title-font-size                    :14px;        // 标题字号
+$subtitle-number                    :13px;        // 小标题字号
+$text-font-size                     :12px;        // 正文字号
+
+$chineseSimSun                      :SimSun;      // 中文宋体
+$chineseYaHei                       :Microsoft YaHei;  // 中文微软雅黑
+$chineseSimHei                      :SimHei;           // 中文黑体
+$englishArial                       :Arial;            // 英文Arial
+
+$white-text                         :#ffffff;        // 白色文本
+
+$message-info-text-color            :#8f9298;          // message文本提示色-提示
+$message-info-background-color      :#f4f4f5;          // message背景色-提示
+$message-info-border-color          :#e7eaf1;          // message边框色-提示
+
+$message-success-text-color         :#3bc568;          // message文本提示色-成功
+$message-success-background-color   :#ebf9f0;          // message背景色-成功
+$message-success-border-color       :#d8f3e2;          // message边框色-成功
+
+$message-warning-text-color         :#f19d18;          // message文本提示色-警告
+$message-warning-background-color   :#fef5e7;          // message背景色-警告
+$message-warning-border-color       :#f9ebd8;          // message边框色-警告
+
+$message-error-text-color           :#f25555;          // message文本提示色-错误
+$message-error-background-color     :#feeeee;          // message背景色-错误
+$message-error-border-color         :#fce1e1;          // message边框色-错误
