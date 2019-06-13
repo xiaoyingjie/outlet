@@ -24,7 +24,7 @@
           </div>
           <div class="search-item">
             <span>排查状态</span>
-            <el-select size="small" style="width: 180px" v-model="searchInfo.pcstate" placeholder="请选择">
+            <el-select clearable size="small" style="width: 180px" v-model="searchInfo.pcstate" placeholder="请选择">
               <el-option
                 label="未排查"
                 value="0">
@@ -81,12 +81,12 @@
                   <div style="text-align: center;font-size: 12px;" class="poverc">编辑详情</div>
                   <el-button slot="reference" style="font-size: 12px;" @click.stop="toEditor(scope.row)" type="text"><i class="icfont iconfont iconedit1"></i></el-button>
                 </el-popover>
-                <el-popover
+                <!-- <el-popover
                   placement="top"
                   trigger="hover">
                   <div style="text-align: center;font-size: 12px;" class="poverc">查看详情</div>
                   <el-button slot="reference" style="font-size: 12px;" type="text" @click.stop="watchDetails(scope.row)"><i class="icfont iconfont iconzhuanxiangbanqueren"></i></el-button>
-                </el-popover>
+                </el-popover> -->
               </template>
             </el-table-column>
             <el-table-column
@@ -177,6 +177,7 @@
         selectXzqh: [],
         loading: false,
         searchInfo: {
+          checkstate: 2,
           pcstate: '', // 排查状态
           xzqh: '', // 所在地传出值
           remark: '',

@@ -34,16 +34,16 @@
                 </el-form-item>
                 <el-form-item class="yhm" label="用户名 : " prop="un">
                   <!-- 编辑 -->
-                  <el-input :disabled="true" class="noShuRu" v-if="!isAdd" v-model="form.un"></el-input>
+                  <el-input style="width: 200px" :disabled="true" class="noShuRu" v-if="!isAdd" v-model="form.un"></el-input>
                   <!-- 添加 -->
-                  <el-input @change="yanZ" v-if="isAdd" v-model="form.un"></el-input>
+                  <el-input style="width: 200px" @change="yanZ" v-if="isAdd" v-model="form.un"></el-input>
                   <span class="errorTitle" v-if="isUsed && isAdd">该用户名已存在</span>
                 </el-form-item>
                 <el-form-item label="真实姓名 :" prop="n">
                   <!-- 编辑 -->
-                  <el-input auto-complete="off" class="noShuRu" v-if="!isAdd" v-model="form.n"></el-input>
+                  <el-input style="width: 200px" auto-complete="off" class="noShuRu" v-if="!isAdd" v-model="form.n"></el-input>
                   <!-- 添加 -->
-                  <el-input auto-complete="off" v-if="isAdd" v-model="form.n"></el-input>
+                  <el-input style="width: 200px" auto-complete="off" v-if="isAdd" v-model="form.n"></el-input>
                 </el-form-item>
                 <el-form-item label="使用状态 : ">
                   <el-radio :label="0" v-model="form.id">启用</el-radio>
@@ -56,7 +56,7 @@
                 </el-form-item>
 
                 <el-form-item label="联系电话 :" prop="p">
-                  <el-input :maxlength="11" placeholder="请输入手机号码" v-model="form.p"></el-input>
+                  <el-input style="width: 200px" :maxlength="11" placeholder="请输入手机号码" v-model="form.p"></el-input>
                 </el-form-item>
 
                 <el-form-item label="过期时间 :">
@@ -64,13 +64,14 @@
                     :editable="false"
                     placeholder="过期时间"
                     type="date"
+                    style="width: 200px"
                     :picker-options="pickerOptions0"
                     v-model="form.expirationTime"
                   ></el-date-picker>
                 </el-form-item>
 
                 <el-form-item label="备注 :" label-width="67px">
-                  <el-input placeholder="请输入用户备注说明" v-model="form.remark"></el-input>
+                  <el-input style="width: 200px" placeholder="请输入用户备注说明" v-model="form.remark"></el-input>
                 </el-form-item>
                 <div>
                   <span class="historyProblemWrap-title">&nbsp;&nbsp;&nbsp;&nbsp;角色权限设置</span>

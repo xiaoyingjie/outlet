@@ -106,9 +106,14 @@ var config = {
     userToken: 'userToken_system',
     userInfo: 'userInfo_system'
   },
+  storageKey: {
+    userToken: 'userToken_system',
+    userInfo: 'userInfo_system'
+  },
   statisticsUrl: 'http://211.101.37.227:8075/',
   // baseUrlcs3: 'http://60.247.54.34:11001/',
-  baseUrlcs1: 'http://192.168.1.183:8511/',
+  // baseUrlcs1: 'http://192.168.1.183:8511/',
+  baseUrlcs1: 'http://192.168.0.181:8511/',
   baseUrlcs: 'http://192.168.1.183:9913/',
   appUrl: {
     waterSorceSystem: 'http://60.247.54.34:8220/water-source-system/index.html#'

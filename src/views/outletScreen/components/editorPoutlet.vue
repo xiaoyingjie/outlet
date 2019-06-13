@@ -366,7 +366,7 @@
   import { getXzqhA, dealXzqu } from '@/mk'
 
   export default {
-    props: ['xqId', 'pwkOptions', 'pfzkOptions', 'rhkoptions'],
+    props: ['userRow', 'pwkOptions', 'pfzkOptions', 'rhkoptions'],
     components: {
       Panel,
       uploadImg
@@ -403,7 +403,7 @@
     methods: {
       editorDetails () {
         this.loading = true
-        api.rhpwkGetDetailA(this.xqId).then(res => {
+        api.rhpwkGetDetailA(this.userRow.id).then(res => {
           if (res.status === 200 && res.data.c === 1) {
             this.dealInformation(res.data.r)
             this.loading = false
@@ -426,6 +426,10 @@
         let wsyslyCheckItem = this.wsyslyOptions.filter(el => el.checked === true)
         this.wsyslyChecked = wsyslyCheckItem.map(el => el.code)
         this.imageList = data.checkImageList || []
+        if (data.rhzpkInfo.pffsej) {
+          this.selectRhk = [data.rhzpkInfo.pffsyj, data.rhzpkInfo.pffsej]
+          return
+        }
         this.selectRhk = [data.rhzpkInfo.pffsyj]
       },
       updateDetails () {
@@ -449,15 +453,15 @@
         })
         //  标记
         let args = {
-          id: this.xqId,
+          id: this.userRow.id,
           name: this.rhzpkInfo.pwkName,
           address: this.rhzpkInfo.address,
           sfspwk: this.rhzpkInfo.sfspwk,
           pfzk: this.rhzpkInfo.pfzk,
           xzqh: this.selectXzqh[this.selectXzqh.length - 1] || '',
           pfzkms: this.rhzpkInfo.pfzkms,
-          pffsyj: '',
-          pffsej: '',
+          pffsyj: this.selectRhk[0] || '',
+          pffsej: this.selectRhk[1] || '',
           pwkzbhj: zbhj,
           pwklx: this.rhzpkInfo.pwklx,
           pwklxms: this.rhzpkInfo.pwklxms,
@@ -474,13 +478,6 @@
           ycxcyms: this.rhzpkInfo.ycxcyms,
           remark: this.rhzpkInfo.remark,
           checkImageList: this.imageList
-        }
-        if (this.selectRhk.length && this.selectRhk.length > 1) {
-          args.pffsej = this.selectRhk[this.selectRhk.length - 1]
-          args.pffsyj = ''
-        } else {
-          args.pffsyj = this.selectRhk[this.selectRhk.length - 1] || ''
-          args.pffsej = ''
         }
         api.rhpwkUpdatePwkInfoA(args).then(res => {
           if (res.status === 200 && res.data.c === 1) {

@@ -45,7 +45,7 @@
 								<el-option label="系统级" value="0"></el-option>
 								<el-option label="部级" value="1"></el-option>
 								<el-option label="地方级" value="2"></el-option>
-								<el-option label="督察级" value="3"></el-option>
+								<el-option label="督察级" value="-1"></el-option>
 							</el-select>
 						</el-form-item>
 						<el-form-item label="角色描述 : ">

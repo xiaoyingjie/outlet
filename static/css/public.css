@@ -122,4 +122,11 @@ a {
 .el-cascader.is-disabled .el-cascader__label span {
   color: #c0c4cc!important;
 }
-
+.el-dropdown-menu__item {
+  padding: 0 74px 0 17px!important;
+  font-size: 12px!important;
+}
+.el-dropdown-menu__item .icfont{
+  font-size: 12px!important;
+  color: #a0a0a0!important;
+}

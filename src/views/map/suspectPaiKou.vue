@@ -269,15 +269,15 @@
         this.getSearchList()
       },
       NoSearch () {
-        config.Maps.getMap().getView().animate({
-          center: [12114566.857708992, 4037839.9360650205],
-          zoom: 5,
-          duration: 500
-        })
-        config.Maps.removeFeatureByLayerName('rhzpkPoints')
-        config.Maps.removeFeatureByLayerName('questionPoints')
-        config.Maps.removeFeatureByLayerName('rhhlPoints')
-        config.Maps.removeFeatureByLayerName('point')
+        // config.Maps.getMap().getView().animate({
+        //   center: [12114566.857708992, 4037839.9360650205],
+        //   zoom: 5,
+        //   duration: 500
+        // })
+        // config.Maps.removeFeatureByLayerName('rhzpkPoints')
+        // config.Maps.removeFeatureByLayerName('questionPoints')
+        // config.Maps.removeFeatureByLayerName('rhhlPoints')
+        // config.Maps.removeFeatureByLayerName('point')
         this.searchState = true
       }
     },

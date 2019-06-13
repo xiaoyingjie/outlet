@@ -15,7 +15,7 @@
         background-color="#1a202a"
         text-color="rgba(255,255,255,.45)"
         active-text-color="#fff">
-        <!-- <div v-for="(item, index) in menu" :key="index">
+        <div v-for="(item, index) in menu" :key="index">
           <el-submenu :class="isCollapse ? 'elSubmenu-index' : ''" :index="item.name" :key="item.name"  v-if="item.children !== undefined">
             <template slot="title">
               <i :class="'icfont iconfont ' + item.iconclass"></i>
@@ -29,8 +29,8 @@
             <i :class="'icfont iconfont ' + item.icon"></i>
             <template slot="title"><span slot="title"> {{item.mkname}} </span></template>
           </el-menu-item>
-        </div> -->
-        <div>
+        </div>
+        <!-- <div>
           <el-submenu class="elSubmenu-index" index="1">
             <template slot="title">
               <i class="icfont iconfont icondianziditu"></i>
@@ -41,7 +41,7 @@
               <el-menu-item index="theScreen">现场排查</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-submenu class="elSubmenu-index" index="1">
+          <el-submenu class="elSubmenu-index" index="2">
             <template slot="title">
               <i class="icfont iconfont iconpaiwukoupaicha"></i>
               <span slot="title" v-if="!isCollapse">排污口排查</span>
@@ -51,7 +51,7 @@
               <el-menu-item index="pOutlet">现场排查</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <el-submenu class="elSubmenu-index" index="2">
+          <el-submenu class="elSubmenu-index" index="3">
             <template slot="title">
               <i class="icfont iconfont icon-yonghuliebiao"></i>
               <span slot="title" v-if="!isCollapse">系统管理</span>
@@ -62,7 +62,7 @@
               <el-menu-item index="unit">组织机构管理</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-        </div>
+        </div> -->
       </el-menu>
     </el-scrollbar>
     <div class="kaiguan" :style="isCollapse === true ? 'width:65px;' : 'width:210px;' " @click="openMenu(isCollapse)">
@@ -86,7 +86,7 @@
     },
     data () {
       return {
-        openName: ['1'],
+        openName: [],
         isCollapse: false
       }
     },
@@ -95,9 +95,12 @@
     beforeMount () {
     },
     mounted () {
-      // this.setOpenName()
+      this.setOpenName()
     },
     watch: {
+      activeName () {
+        this.$router.push({name: this.activeName})
+      }
     },
     methods: {
       openMenu (flag) {
@@ -109,6 +112,7 @@
         this.$router.push({name: name})
       },
       setOpenName () {
+        // this.openName.push('map')
         this.menu.map(item => {
           if (item.children !== undefined) {
             item.children.map(i => {

@@ -12,13 +12,14 @@
         <div class="table-wraper" v-show="!showDetail">
           <el-table
             :data="listData"
+            :row-style="rowStyle"
             @row-click="rowClick"
             style="width: 100%">
             <el-table-column
               type="index"
               width="50">
             </el-table-column>
-            <el-table-column>
+            <el-table-column label="审核状态">
               <template slot-scope="scope">
                 <span :class="[scope.row.checkstate === 1 ? '' : 'readFont']">{{ scope.row.checkstatestr }}</span>
               </template>
@@ -85,6 +86,9 @@
         loading1: false,
         detailsData: {},
         zxbId: '',
+        rowStyle: {
+          cursor: 'pointer'
+        },
         // ---------
         showDetail: false,
         readonly: true

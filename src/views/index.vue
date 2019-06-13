@@ -21,6 +21,8 @@ export default {
     // this.getSystemDetail('18979100365', '123456', 'rhk')
     // 张磊 数据采集员 督查账号
     // this.getSystemDetail('zhanglei', '123456', 'rhk')
+    // lucas
+    // this.getSystemDetail('lucas', '123456qq', 'rhk')
   },
   mounted () {
     // this.getLocalStorage ()

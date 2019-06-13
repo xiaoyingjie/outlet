@@ -12,13 +12,14 @@
         <div class="table-wraper" v-show="!showDetail">
           <el-table
             :data="listData"
+            :row-style="rowStyle"
             @row-click="rowClick"
             style="width: 100%">
             <el-table-column
               type="index"
               width="50">
             </el-table-column>
-            <el-table-column>
+            <el-table-column label="审核状态">
               <template slot-scope="scope">
                 <span :class="[scope.row.checkstate === 1 ? '' : 'readFont']">{{ scope.row.checkstatestr }}</span>
               </template>
@@ -85,6 +86,9 @@
         loading1: false,
         detailsData: {},
         zxbId: '',
+        rowStyle: {
+          cursor: 'pointer'
+        },
         // ---------
         showDetail: false,
         readonly: true
@@ -98,7 +102,15 @@
     methods: {
       getList () {
         this.loading = true
-        api.auditGetMinistryAuditListA('8619b2eb691c47a7ae92b568e0c8d6e7').then(res => {
+        let id
+        let rowdata = JSON.parse(sessionStorage.getItem('detailObj')).rowData
+        let type = JSON.parse(sessionStorage.getItem('detailObj')).type
+        if (type === 'yspk') {
+          id = rowdata.pcid
+        } else if (type === 'xcpc') {
+          id = rowdata.id
+        }
+        api.auditGetMinistryConfirmListA(id).then(res => {
           if (res.status === 200 && res.data.c === 1) {
             this.listData = res.data.r.data
             this.loading = false
@@ -112,7 +124,7 @@
       },
       getDetails () {
         this.loading1 = true
-        api.auditGetMinistryAuditDetailA(this.zxbId).then(res => {
+        api.auditGetMinistryConfirmDetailA(this.zxbId).then(res => {
           if (res.status === 200 && res.data.c === 1) {
             this.detailsData = res.data.r
             this.loading1 = false

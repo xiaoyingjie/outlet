@@ -60,19 +60,7 @@
           <div class="content-item">
             <div>
               <span class="isd">入海方式</span>
-              <el-cascader
-                size="small"
-                :disabled="readonly"
-                placeholder="请选择入海方式"
-                :options="rhkoptions"
-                change-on-select
-                clearable
-                style="width: 300px"
-                :props="rhkprops"
-                v-model="selectRhk"
-                :show-all-levels="false"
-                filterable>
-              </el-cascader>
+              <el-input size="small" :readonly="readonly" style="width: 300px" v-model="rhzpkInfo.rhfs"></el-input>
             </div>
             <div>
               <span class="isd">填表人单位</span>
@@ -191,6 +179,7 @@
           </div>
           <div class="wraper-indentation">
             <span>{{ rhzpkInfo.remark }}</span>
+            <span v-if="!rhzpkInfo.remark">暂无备注信息</span>
           </div>
           <div class="item-title">
             <span></span>
@@ -278,17 +267,10 @@
         imageList: [],
         pwkOptions: [],
         zbhjOptions: [],
-        rhkoptions: [],
         wsyslyOptions: [],
         zbhjChecked: [],
         wsyslyChecked: [],
         rhzpkInfo: {},
-        selectRhk: [],
-        rhkprops: {
-          value: 'code',
-          label: 'name',
-          children: 'enumChilds'
-        },
         xzqhprops: {
           value: 'c',
           label: 'n',
@@ -304,7 +286,6 @@
       this.options = getXzqhA()
       this.editorDetails()
       this.getTypepwk('pwkOptions', '04')
-      this.getTypepwk('rhkoptions', '08')
     },
     activated () {
       this.editorDetails()
@@ -355,7 +336,6 @@
         let wsyslyCheckItem = this.wsyslyOptions.filter(el => el.checked === true)
         this.wsyslyChecked = wsyslyCheckItem.map(el => el.code)
         this.imageList = data.checkImageList || []
-        this.selectRhk = [data.rhzpkInfo.pffsyj]
       }
     }
   }

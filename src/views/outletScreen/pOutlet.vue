@@ -20,7 +20,7 @@
           </div>
           <div class="search-item">
             <span>是否是排污口</span>
-            <el-select size="small" style="width: 180px"  v-model="searchInfo.sfspwk" placeholder="请选择是否是排污口" clearable>
+            <el-select clearable size="small" style="width: 180px"  v-model="searchInfo.sfspwk" placeholder="请选择是否是排污口">
               <el-option
                 label="是"
                 value="1">
@@ -59,7 +59,7 @@
           </div>
           <div class="search-item">
             <span>状态</span>
-            <el-select size="small" style="width: 180px" v-model="searchInfo.sewagestate" placeholder="请选择">
+            <el-select clearable size="small" style="width: 180px" v-model="searchInfo.sewagestate" placeholder="请选择">
               <el-option
                 label="已确认排口"
                 value="1">
@@ -72,7 +72,7 @@
           </div>
           <div class="search-item">
             <span>异常需采样</span>
-            <el-select size="small" style="width: 180px" v-model="searchInfo.ycxcy" placeholder="请选择">
+            <el-select clearable size="small" style="width: 180px" v-model="searchInfo.ycxcy" placeholder="请选择">
               <el-option
                 label="需要"
                 value="1">
@@ -85,7 +85,7 @@
           </div>
           <div class="search-item">
             <span>排污口类型</span>
-            <el-select size="small" style="width: 180px"  v-model="searchInfo.pwklx" placeholder="请选择类型" clearable>
+            <el-select clearable size="small" style="width: 180px"  v-model="searchInfo.pwklx" placeholder="请选择类型" clearable>
               <el-option
                 v-for="(item, index) in pwkOptions"
                 :key="index"
@@ -111,7 +111,7 @@
           </div>
           <div class="search-item">
             <span>是否采样</span>
-            <el-select size="small" style="width: 180px" v-model="searchInfo.sfjbcytj" placeholder="请选择">
+            <el-select clearable size="small" style="width: 180px" v-model="searchInfo.sfjbcytj" placeholder="请选择">
               <el-option
                 label="是"
                 value="1">
@@ -124,7 +124,7 @@
           </div>
           <div class="search-item">
             <span style="vertical-align: bottom;">是否填报专项办意见</span>
-            <el-select size="small" style="width: 180px" v-model="searchInfo.sftbzxbyj" placeholder="请选择">
+            <el-select clearable size="small" style="width: 180px" v-model="searchInfo.sftbzxbyj" placeholder="请选择">
               <el-option
                 label="是"
                 :value="1">
@@ -150,7 +150,7 @@
           </div>
           <div class="search-item">
             <span style="vertical-align: bottom;">是否反馈地方意见</span>
-            <el-select size="small" style="width: 180px" v-model="searchInfo.sffkyj" placeholder="请选择">
+            <el-select clearable size="small" style="width: 180px" v-model="searchInfo.sffkyj" placeholder="请选择">
               <el-option
                 label="是"
                 :value="1">
@@ -166,27 +166,53 @@
           <el-table
             :data="tableData"
             :row-style="rowStyle"
-            @row-click="rowClick"
-            style="width: 100%">
+            @row-click="rowClick">
             <el-table-column
               type="index"
               width="50">
             </el-table-column>
             <el-table-column
+              width="160"
               label="操作">
               <template slot-scope="scope">
                 <el-popover
+                  v-if="permissions.some(el => el.name === 'leader')"
                   placement="top"
                   trigger="hover">
-                  <div style="text-align: center;font-size: 12px;" class="poverc">编辑详情</div>
-                  <el-button slot="reference" style="font-size: 12px;" @click.stop="toEditor(scope.row, 'bianji')" type="text"><i class="icfont iconfont iconedit1"></i></el-button>
+                  <div style="text-align: center;font-size: 12px;" class="poverc">组长审核</div>
+                  <el-button slot="reference" style="font-size: 12px;" @click.stop="toEditor(scope.row, 'zzsh')" type="text"><i class="icfont iconfont iconshenheshenpi"></i></el-button>
                 </el-popover>
                 <el-popover
+                  v-if="permissions.some(el => el.name === 'leader')"
+                  placement="top"
+                  trigger="hover">
+                  <div style="text-align: center;font-size: 12px;" class="poverc">专项办审核</div>
+                  <el-button slot="reference" style="font-size: 12px;" @click.stop="toEditor(scope.row, 'zxbsh')" type="text"><i class="icfont iconfont iconyijianfankui"></i></el-button>
+                </el-popover>
+                <el-popover
+                  placement="top"
+                  trigger="hover">
+                  <div style="text-align: center;font-size: 12px;" class="poverc">专项办确认</div>
+                  <el-button slot="reference" style="font-size: 12px;" @click.stop="toEditor(scope.row, 'zxbqr')" type="text"><i class="icfont iconfont iconzhuanxiangbanqueren"></i></el-button>
+                </el-popover>
+                <el-popover
+                  placement="top"
+                  trigger="hover">
+                  <div style="text-align: center;font-size: 12px;" class="poverc">编辑排查详情</div>
+                  <el-button slot="reference" style="font-size: 12px;" @click.stop="toEditor(scope.row, 'bianji')" type="text"><i class="icfont iconfont icontongjibaobiao"></i></el-button>
+                </el-popover>
+                <el-popover
+                  placement="top"
+                  trigger="hover">
+                  <div style="text-align: center;font-size: 12px;" class="poverc">添加地方意见</div>
+                  <el-button slot="reference" style="font-size: 12px;" @click.stop="toEditor(scope.row, 'dfyj')" type="text"><i class="icfont iconfont iconedit1"></i></el-button>
+                </el-popover>
+                <!-- <el-popover
                   placement="top"
                   trigger="hover">
                   <div style="text-align: center;font-size: 12px;" class="poverc">查看详情</div>
                   <el-button slot="reference" style="font-size: 12px;" @click.stop="watchDetails(scope.row)" type="text"><i class="icfont iconfont iconzhuanxiangbanqueren"></i></el-button>
-                </el-popover>
+                </el-popover> -->
                 <el-popover
                   placement="top"
                   trigger="hover">
@@ -283,8 +309,12 @@
       </div>
     </Panel>
     <transition name="editor-wrap">
-      <editorP v-if="showname === 'bianji'" @goback="goback" :pwkOptions="pwkOptions" :rhkoptions="rhkoptions" :pfzkOptions="pfzkOptions" :xqId="xqId"></editorP>
-      <add-jiance v-if="showname === 'jiance'" :xqCode="xqCode" :xqId="xqId" @goback="goback"></add-jiance>
+      <editorP v-if="showname === 'bianji'" @goback="goback" :pwkOptions="pwkOptions" :rhkoptions="rhkoptions" :pfzkOptions="pfzkOptions" :userRow="userRow"></editorP>
+      <add-jiance v-if="showname === 'jiance'" :userRow="userRow" @goback="goback"></add-jiance>
+      <add-dfyj v-if="showname === 'dfyj'" @goback="goback" :userRow="userRow"></add-dfyj>
+      <group-leader @goback="goback" v-if="showname === 'zzsh'" :userRow="userRow"></group-leader>
+      <zxb-shenhe v-if="showname === 'zxbsh'" @goback="goback" :userRow="userRow"></zxb-shenhe>
+      <zxb-qr v-if="showname === 'zxbqr'" @goback="goback" :userRow="userRow"></zxb-qr>
     </transition>
   </div>
 </template>
@@ -293,6 +323,10 @@
   import Panel from '@/components/Panel'
   import editorP from './components/editorPoutlet'
   import addJiance from './components/addJiance'
+  import addDfyj from './components/addDfyj'
+  import groupLeader from './components/groupLeader'
+  import zxbShenhe from './components/zxbShenhe'
+  import zxbQr from './components/zxbQr'
   import * as api from '@/store/api'
   import { getXzqhA } from '@/mk'
 
@@ -300,7 +334,11 @@
     components: {
       Panel,
       editorP,
-      addJiance
+      addJiance,
+      addDfyj,
+      groupLeader,
+      zxbShenhe,
+      zxbQr
     },
     data () {
       return {
@@ -341,16 +379,20 @@
         selectRhk: [],
         options: [],
         tableData: [],
-        xqId: '',
-        xqCode: ''
+        userRow: {},
+        // 排查权限数据
+        permissions: ''
       }
     },
     created () {
       this.getTypepwk('pwkOptions', '04')
       this.getTypepwk('pfzkOptions', '03')
-      this.getTypepwk('rhkoptions', '08')
+      this.getFsRh('rhkoptions', '08')
       this.options = getXzqhA()
       this.getList()
+      let menu = JSON.parse(localStorage.getItem('menu'))
+      let permissionsParent = menu.find(el => el.mkname === '排污口排查')
+      this.permissions = permissionsParent.children.find(el => el.mkname === '现场排查').oitems
     },
     methods: {
       onSearch () {
@@ -359,13 +401,8 @@
       getList () {
         this.loading = true
         this.searchInfo.xzqh = this.selectXzqh[this.selectXzqh.length - 1] || ''
-        if (this.selectRhk.length && this.selectRhk.length === 1) {
-          this.searchInfo.pffsyj = this.selectRhk[this.selectRhk.length - 1]
-          this.searchInfo.pffsej = ''
-        } else {
-          this.searchInfo.pffsej = this.selectRhk[this.selectRhk.length - 1] || ''
-          this.searchInfo.pffsyj = ''
-        }
+        this.searchInfo.pffsyj = this.selectRhk[0] || ''
+        this.searchInfo.pffsej = this.selectRhk[1] || ''
         api.rhpwkGetPageListA(this.searchInfo).then(res => {
           if (res.status === 200 && res.data.c === 1) {
             this.total = res.data.r.total
@@ -385,6 +422,16 @@
         api.rhpwkGetEnumA(code).then(res => {
           if (res.status === 200 && res.data.c === 1) {
             this[target] = res.data.r
+            return
+          }
+          this.$message({message: '查询异常', type: 'warning', duration: 1000})
+        })
+      },
+      // 入海方式获取
+      getFsRh (target, code) {
+        api.rhpwkGetNextEnumA(code).then(res => {
+          if (res.status === 200 && res.data.c === 1) {
+            this[target] = res.data.r.enumList
             return
           }
           this.$message({message: '查询异常', type: 'warning', duration: 1000})
@@ -414,10 +461,9 @@
           this.getList()
         }
       },
-      // 编辑
+      // caozuo 操作
       toEditor (row, state) {
-        this.xqId = row.id
-        this.xqCode = row.code
+        this.userRow = row
         this.showname = state
       },
       handleSizeChange (val) {
@@ -505,7 +551,7 @@
       padding-bottom: 20px;
     }
     .table-wrap{
-      min-width: 1030px;
+      // min-width: 1030px;
       padding: 16px;
       .statecla{
         font-size: 12px;

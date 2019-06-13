@@ -16,7 +16,7 @@
 <script>
   import * as api from '@/store/api'
   export default {
-    props: ['imagetype'],
+    props: ['imagetype', 'index'],
     components: {
     },
     data () {
@@ -32,10 +32,10 @@
         let item = {
           imagename: res.imagename,
           imageurl: res.imageurl,
-          imagetype: this.imagetype
+          imagetype: this.imagetype || ''
         }
         this.loading = false
-        this.$emit('finished', item)
+        this.$emit('finished', item, this.index)
       },
       beforeAvatarUpload (file) {
         this.loading = true

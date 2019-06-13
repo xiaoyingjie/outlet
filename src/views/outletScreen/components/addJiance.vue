@@ -10,7 +10,7 @@
           <div class="item-content">
             <div>
               <span class="isd">排污口编号</span>
-              <el-input readonly size="small" style="width: 240px" v-model="xqCode"></el-input>
+              <el-input readonly size="small" style="width: 240px" v-model="userRow.code"></el-input>
             </div>
             <div>
               <span class="isd">样品编号</span>
@@ -83,16 +83,14 @@
   import * as api from '@/store/api'
 
   export default {
-    props: ['xqId', 'xqCode'],
+    props: ['userRow'],
     components: {
       Panel
     },
     data () {
       return {
-        value: '',
         loading: false,
         detailsData: {},
-        // 是编辑还是添加
         isAdd: false
       }
     },
@@ -102,7 +100,7 @@
     methods: {
       getDetails () {
         this.loading = true
-        api.rhpwkGetMonitorMessageA(this.xqId).then(res => {
+        api.rhpwkGetMonitorMessageA(this.userRow.id).then(res => {
           if (res.status === 200 && res.data.c === 1 && res.data.r) {
             this.detailsData = res.data.r
             this.loading = false
@@ -121,7 +119,7 @@
           createtime: this.detailsData.createtime,
           hxxyl: this.detailsData.hxxyl,
           bz: this.detailsData.bz,
-          wtid: this.xqId,
+          wtid: this.userRow.id,
           ph: this.detailsData.ph,
           pwkcode: this.detailsData.pwkcode,
           waiguan: this.detailsData.waiguan,

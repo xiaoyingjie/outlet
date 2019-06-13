@@ -1,5 +1,6 @@
 import 'babel-polyfill'
 import Vue from 'vue'
+import Vuex from 'vuex'
 import moment from 'moment'
 import App from './App.vue'
 
@@ -8,9 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import * as api from './store/api'
 import router from './router'
-import store from './store'
 import filters from './filters/filters'
-// import {mkTree} from './mk'
+import {mkTree} from './mk'
+import store from './store'
 import promise from 'es6-promise'
 import preview from 'vue-photo-preview'
 
@@ -20,6 +21,7 @@ import './main.css'
 
 import 'vue-photo-preview/dist/skin.css'
 Vue.use(preview)
+Vue.use(Vuex)
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
@@ -34,34 +36,22 @@ Vue.prototype.$moment = moment
   history.pushState(null, null, document.URL)
 }) */
 
+// 刷新页面重新add路由
+let permission = window.localStorage.getItem(config.storageKey.userToken)
+if (permission) {
+  let menu = mkTree(JSON.parse(window.localStorage.getItem('mks')))
+  let addRoutes = [{
+    path: '/home',
+    component: require('./home.vue'),
+    name: '',
+    isMenu: true,
+    children: menu
+  }]
+  router.addRoutes(addRoutes)
+}
 for (let key in filters) {
   Vue.filter(key, filters[key])
 }
-// let permission = window.localStorage.getItem(config.storageKey.userToken)
-// if (permission) {
-//   let menu = mkTree(JSON.parse(window.localStorage.getItem('mks')))
-//   let addRoutes = [{
-//     path: '/home',
-//     component: require('./home.vue'),
-//     name: '',
-//     isMenu: true,
-//     children: menu
-//   }]
-//   router.addRoutes(addRoutes)
-// } else {
-  /* config.UserInfo = {}
-  Vue.prototype.$alert('登录失效，请重新登录!!!', '提示', {
-    confirmButtonText: '重新登录',
-    closeOnClickModal: false,
-    closeOnPressEscape: false,
-    center: true,
-    type: 'warning',
-    customClass: 'login_error',
-    showClose: false
-  }).then(() => {
-    window.location.href = config.appUrl.waterSorceSystem
-  }) */
-// }
 /* eslint-disable no-new */
 const vueInstance = new Vue({
   el: '#app',

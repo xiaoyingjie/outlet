@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import VuexAlong from 'vuex-along'
+// import VuexAlong from 'vuex-along'
 import signIn from './modules/signIn'
 import map from './modules/map'
 import system from './modules/system'
@@ -13,6 +13,6 @@ export default new Vuex.Store({
     map,
     system,
     home
-  },
-  plugins: [VuexAlong]
+  }
+  // plugins: [VuexAlong]
 })

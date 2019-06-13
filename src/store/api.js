@@ -40,7 +40,25 @@ export const signIn = _params => {
 // 登出
 export const signOut = _params => {
   return axios.get(`user/userlogout?userId=${_params.userId}`, {
-    baseURL: config.baseUrlcs
+    baseURL: config.baseUrlcs1
+  })
+}
+// 获取个人信息 /user/getUserInfoByUserId
+export const userGetUserInfoByUserIdA = _params => {
+  return axios.get(`user/getUserInfoByUserId?id=${_params.userId}`, {
+    baseURL: config.baseUrlcs1
+  })
+}
+// 编辑用户信息 /user/editUserInfo
+export const userEditUserInfoA = (_params) => {
+  return axios.post('user/editUserInfo', _params, {
+    baseURL: config.baseUrlcs1
+  })
+}
+// 修改密码 /user/setUser
+export const userSetUserA = (_params) => {
+  return axios.post('user/setUser', _params, {
+    baseURL: config.baseUrlcs1
   })
 }
 // -----------------排污口新接口
@@ -116,6 +134,54 @@ export const auditGetMinistryAuditDetailA = (id) => {
     baseURL: config.baseUrlcs
   })
 }
+// 专项办确认列表 /audit/getMinistryConfirmList
+export const auditGetMinistryConfirmListA = (id) => {
+  return axios.get('audit/getMinistryConfirmList?id=' + id, {
+    baseURL: config.baseUrlcs
+  })
+}
+// 专项办确认详情 /audit/getMinistryConfirmDetail
+export const auditGetMinistryConfirmDetailA = (id) => {
+  return axios.get('audit/getMinistryConfirmDetail?id=' + id, {
+    baseURL: config.baseUrlcs
+  })
+}
+// 地方意见 列表/audit/getLocalAuditList
+export const auditGetLocalAuditListA = (id) => {
+  return axios.get('audit/getLocalAuditList?id=' + id, {
+    baseURL: config.baseUrlcs
+  })
+}
+// 地方意见详情 /audit/getLocalAuditDetail
+export const auditGetLocalAuditDetailA = (id) => {
+  return axios.get('audit/getLocalAuditDetail?id=' + id, {
+    baseURL: config.baseUrlcs
+  })
+}
+// 填报地方意见 /audit/insertLocalAudit
+export const auditInsertLocalAuditA = (_params) => {
+  return axios.post('audit/insertLocalAudit', _params, {
+    baseURL: config.baseUrlcs
+  })
+}
+// 组长审核 /audit/insertHeadmanAudit
+export const auditInsertHeadmanAuditA = (_params) => {
+  return axios.post('audit/insertHeadmanAudit', _params, {
+    baseURL: config.baseUrlcs
+  })
+}
+// 专项办审核 /audit/insertMinistryAudit
+export const auditInsertMinistryAuditA = (_params) => {
+  return axios.post('audit/insertMinistryAudit', _params, {
+    baseURL: config.baseUrlcs
+  })
+}
+// 专项办确认 /audit/insertMinistryConfirm
+export const auditInsertMinistryConfirmA = (_params) => {
+  return axios.post('audit/insertMinistryConfirm', _params, {
+    baseURL: config.baseUrlcs
+  })
+}
 // 疑似排口流程查询 /process/getLiuchengInfoByYswt
 export const processGetLiuchengInfoByYswtA = (id) => {
   return axios.get('process/getLiuchengInfoByYswt?id=' + id, {
@@ -131,6 +197,12 @@ export const processGetLiuchengInfoByCheckA = (id) => {
 // 枚举  /rhpwk/getEnum
 export const rhpwkGetEnumA = (parcode) => {
   return axios.get('rhpwk/getEnum?parcode=' + parcode, {
+    baseURL: config.baseUrlcs
+  })
+}
+// 枚举入海方式 /rhpwk/getNextEnum
+export const rhpwkGetNextEnumA = (parcode) => {
+  return axios.get('rhpwk/getNextEnum?parcode=' + parcode, {
     baseURL: config.baseUrlcs
   })
 }
